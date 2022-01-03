@@ -1,24 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZLK-gf-WZD">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="ENO-Af-RJH">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <navigationController id="ZLK-gf-WZD" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Fm-3M-qcY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jjL-yT-CMP" kind="relationship" relationship="rootViewController" id="4sy-ce-YKJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mly-aP-1oc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1401" y="101"/>
+        </scene>
+        <!--Start View Controller-->
+        <scene sceneID="Kps-XD-XpJ">
+            <objects>
+                <viewController id="jjL-yT-CMP" customClass="StartViewController" customModule="kachalochka" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5bT-rl-azw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="Ma5-K9-vtj">
+                                <rect key="frame" x="80.5" y="302.5" width="253" height="291"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91B-nQ-6Ve">
+                                        <rect key="frame" x="0.0" y="0.0" width="253" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="67" id="j5Z-d6-8ti"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Упражнения"/>
+                                        <connections>
+                                            <segue destination="g3b-EW-4Y5" kind="show" id="vpm-4d-B3d"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqz-2O-jsX">
+                                        <rect key="frame" x="0.0" y="112" width="253" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="67" id="INu-eQ-sYc"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Статистика"/>
+                                        <connections>
+                                            <segue destination="YiS-db-QXf" kind="show" id="hVD-zF-elR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjG-rn-J0I">
+                                        <rect key="frame" x="0.0" y="224" width="253" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="67" id="Yyc-lr-qdd"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Тренировки"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="thB-gU-enS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="thB-gU-enS" firstAttribute="trailing" secondItem="Ma5-K9-vtj" secondAttribute="trailing" constant="80.5" id="0Eu-Xr-vg6"/>
+                            <constraint firstItem="Ma5-K9-vtj" firstAttribute="centerY" secondItem="5bT-rl-azw" secondAttribute="centerY" id="CwM-ez-pKF"/>
+                            <constraint firstItem="Ma5-K9-vtj" firstAttribute="leading" secondItem="thB-gU-enS" secondAttribute="leading" constant="80.5" id="P1l-mh-6My"/>
+                            <constraint firstItem="Ma5-K9-vtj" firstAttribute="centerX" secondItem="5bT-rl-azw" secondAttribute="centerX" id="S1A-Ru-ZJa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WNq-7S-OcI"/>
+                    <connections>
+                        <outlet property="exerciseButton" destination="91B-nQ-6Ve" id="g60-Af-Ucg"/>
+                        <outlet property="savedTrainingButton" destination="rjG-rn-J0I" id="ymZ-jE-vOu"/>
+                        <outlet property="statisticButton" destination="cqz-2O-jsX" id="pot-XY-q9C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ul-vN-u5M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-675" y="98"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6kx-SR-4QU">
+            <objects>
+                <viewController id="YiS-db-QXf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a9x-Dc-NOP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Csp-yO-7Gc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="u0i-fW-JOF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JFa-aG-MGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230" y="423"/>
+        </scene>
+        <!--Body Parts To Train-->
+        <scene sceneID="PhH-5V-YNt">
+            <objects>
+                <tableViewController id="g3b-EW-4Y5" customClass="ExersiseTableViewController" customModule="kachalochka" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="GlT-pL-4G7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="xZh-UW-6pl">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xZh-UW-6pl" id="bDL-VI-zl7">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="g3b-EW-4Y5" id="Ebb-S6-6TS"/>
+                            <outlet property="delegate" destination="g3b-EW-4Y5" id="Rwt-Bz-sD4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Body Parts To Train" largeTitleDisplayMode="always" id="F4a-CF-EIh"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="geB-Wv-zBy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="191" y="-251"/>
+        </scene>
+        <!--Chest Table View Controller-->
+        <scene sceneID="xsy-zb-PGO">
+            <objects>
+                <tableViewController storyboardIdentifier="chestVC" id="TkS-bF-AhB" customClass="ChestTableViewController" customModule="kachalochka" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="W7B-Po-UaC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chestCell" textLabel="0Bv-9o-4UX" style="IBUITableViewCellStyleDefault" id="Hs1-jX-FBj">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hs1-jX-FBj" id="6hi-Jk-pXC">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Bv-9o-4UX">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="TkS-bF-AhB" id="ESH-r0-5b0"/>
+                            <outlet property="delegate" destination="TkS-bF-AhB" id="7f3-PY-6gX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="d9N-Ko-pUA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Jb-3u-uEs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1088" y="-251"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="systemOrangeColor"/>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
