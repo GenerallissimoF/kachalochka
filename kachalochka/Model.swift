@@ -18,10 +18,16 @@ struct Training {
    
 }
 
-enum ChestExcersise {
-    case dumbbellBenchPress(sets: Int, reps: Int)
-    case barbellBenchPress(sets: Int, reps: Int)
-    case inclineBenchPress(sets: Int, reps: Int)
+struct Excersise {
+    var set: Int
+    var reps: Int
+    var weight: Int
+}
+
+enum ChestExcersise: String {
+    case dumbbellBenchPress = "жим гантелями"
+    case barbellBenchPress = "жим штанги"
+    case inclineBenchPress = "жим под наклоном"
 }
 
 enum LegsExcersise {
@@ -36,7 +42,7 @@ enum BackExcersise {
     case barbelRow(sets: Int, reps: Int)
     
 }
-let training = Training(chest: [ChestExcersise.barbellBenchPress(sets: 0, reps: 0), ChestExcersise.dumbbellBenchPress(sets: 0, reps: 0), ChestExcersise.inclineBenchPress(sets: 0, reps: 0)],  legs: [LegsExcersise.squat(sets: 0, reps: 0), LegsExcersise.frontSquat(sets: 0, reps: 0), LegsExcersise.romanianDedlifts(sets: 0, reps: 0)] , back: [BackExcersise.barbelRow(sets: 0, reps: 0), BackExcersise.deadlift(sets: 0, reps: 0), BackExcersise.pullUps(sets: 0, reps: 0)])
+let training = Training(chest: [ChestExcersise.barbellBenchPress, ChestExcersise.dumbbellBenchPress, ChestExcersise.inclineBenchPress],  legs: [LegsExcersise.squat(sets: 0, reps: 0), LegsExcersise.frontSquat(sets: 0, reps: 0), LegsExcersise.romanianDedlifts(sets: 0, reps: 0)] , back: [BackExcersise.barbelRow(sets: 0, reps: 0), BackExcersise.deadlift(sets: 0, reps: 0), BackExcersise.pullUps(sets: 0, reps: 0)])
 
 
     

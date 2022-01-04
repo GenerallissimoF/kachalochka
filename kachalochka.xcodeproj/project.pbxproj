@@ -16,6 +16,7 @@
 		1D5B6FF6277FA15E00C33E52 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5B6FF5277FA15E00C33E52 /* Model.swift */; };
 		1D5B6FF8277FAF9800C33E52 /* ExersiseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5B6FF7277FAF9800C33E52 /* ExersiseTableViewController.swift */; };
 		1D8BD2FE2783829B00FAB09A /* ChestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8BD2FD2783829B00FAB09A /* ChestTableViewController.swift */; };
+		1D9874D8278498360094D87A /* CurrentTrainingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9874D7278498360094D87A /* CurrentTrainingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1D5B6FF5277FA15E00C33E52 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1D5B6FF7277FAF9800C33E52 /* ExersiseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExersiseTableViewController.swift; sourceTree = "<group>"; };
 		1D8BD2FD2783829B00FAB09A /* ChestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChestTableViewController.swift; sourceTree = "<group>"; };
+		1D9874D7278498360094D87A /* CurrentTrainingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTrainingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +69,9 @@
 				1D5B6FE3277E4A2000C33E52 /* StartViewController.swift */,
 				1D5B6FF7277FAF9800C33E52 /* ExersiseTableViewController.swift */,
 				1D8BD2FD2783829B00FAB09A /* ChestTableViewController.swift */,
-				1D5B6FF5277FA15E00C33E52 /* Model.swift */,
+				1D9874D7278498360094D87A /* CurrentTrainingTableViewController.swift */,
 				1D5B6FE5277E4A2000C33E52 /* Main.storyboard */,
+				1D5B6FF5277FA15E00C33E52 /* Model.swift */,
 				1D5B6FE8277E4A2100C33E52 /* Assets.xcassets */,
 				1D5B6FEA277E4A2100C33E52 /* LaunchScreen.storyboard */,
 				1D5B6FED277E4A2100C33E52 /* Info.plist */,
@@ -153,6 +156,7 @@
 				1D8BD2FE2783829B00FAB09A /* ChestTableViewController.swift in Sources */,
 				1D5B6FE2277E4A2000C33E52 /* SceneDelegate.swift in Sources */,
 				1D5B6FF6277FA15E00C33E52 /* Model.swift in Sources */,
+				1D9874D8278498360094D87A /* CurrentTrainingTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

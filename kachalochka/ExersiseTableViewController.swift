@@ -48,7 +48,7 @@ class ExersiseTableViewController: UITableViewController {
       
         if indexPath.row == 0 {
         let chestVC = ChestTableViewController()
-            chestVC.chestExercise?.chest = training.chest
+        
             
             navigationController?.pushViewController(chestVC, animated: true)
             
