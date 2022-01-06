@@ -43,7 +43,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="Упражнения"/>
                                         <connections>
-                                            <segue destination="g3b-EW-4Y5" kind="show" id="vpm-4d-B3d"/>
+                                            <segue destination="e0P-um-ih2" kind="show" id="byR-Qs-j05"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqz-2O-jsX">
@@ -104,37 +104,47 @@
             </objects>
             <point key="canvasLocation" x="190" y="423"/>
         </scene>
-        <!--Body Parts To Train-->
-        <scene sceneID="PhH-5V-YNt">
+        <!--Body Parts View Controller-->
+        <scene sceneID="5eA-ZR-Nyh">
             <objects>
-                <tableViewController id="g3b-EW-4Y5" customClass="ExersiseTableViewController" customModule="kachalochka" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="GlT-pL-4G7">
+                <viewController id="e0P-um-ih2" customClass="BodyPartsViewController" customModule="kachalochka" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sLa-Em-DRg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gJg-XR-q2q">
+                                <rect key="frame" x="0.0" y="351" width="414" height="223"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="PI1-FO-GKO">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PI1-FO-GKO" id="zA2-5e-kf7">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uxU-iO-UHp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="xZh-UW-6pl">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xZh-UW-6pl" id="bDL-VI-zl7">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="g3b-EW-4Y5" id="Ebb-S6-6TS"/>
-                            <outlet property="delegate" destination="g3b-EW-4Y5" id="Rwt-Bz-sD4"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Body Parts To Train" largeTitleDisplayMode="always" id="F4a-CF-EIh"/>
+                        <constraints>
+                            <constraint firstItem="gJg-XR-q2q" firstAttribute="leading" secondItem="uxU-iO-UHp" secondAttribute="leading" id="8vq-mn-PgS"/>
+                            <constraint firstItem="gJg-XR-q2q" firstAttribute="trailing" secondItem="uxU-iO-UHp" secondAttribute="trailing" id="Uwc-2S-Upz"/>
+                            <constraint firstItem="uxU-iO-UHp" firstAttribute="bottom" secondItem="gJg-XR-q2q" secondAttribute="bottom" constant="288" id="WxS-yw-CJh"/>
+                            <constraint firstItem="gJg-XR-q2q" firstAttribute="top" secondItem="uxU-iO-UHp" secondAttribute="top" constant="263" id="YIV-qM-XzB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zfI-tW-bQR"/>
                     <connections>
-                        <segue destination="xOt-rN-KIf" kind="show" identifier="seg" id="vVQ-Fp-xo2"/>
+                        <outlet property="tableView" destination="gJg-XR-q2q" id="upC-h6-DDB"/>
+                        <segue destination="xOt-rN-KIf" kind="show" identifier="seg" id="Hyi-fz-KIX"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="geB-Wv-zBy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bsT-7S-bCn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="191" y="-251"/>
+            <point key="canvasLocation" x="308.69565217391306" y="-263.16964285714283"/>
         </scene>
         <!--Chest Table View Controller-->
         <scene sceneID="wGE-Z0-mr6">
