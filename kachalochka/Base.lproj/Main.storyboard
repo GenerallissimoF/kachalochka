@@ -128,59 +128,52 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Body Parts To Train" largeTitleDisplayMode="always" id="F4a-CF-EIh"/>
+                    <connections>
+                        <segue destination="xOt-rN-KIf" kind="show" identifier="seg" id="vVQ-Fp-xo2"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="geB-Wv-zBy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="191" y="-251"/>
         </scene>
         <!--Chest Table View Controller-->
-        <scene sceneID="xsy-zb-PGO">
+        <scene sceneID="wGE-Z0-mr6">
             <objects>
-                <tableViewController storyboardIdentifier="chestVC" id="TkS-bF-AhB" customClass="ChestTableViewController" customModule="kachalochka" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="W7B-Po-UaC">
+                <tableViewController id="xOt-rN-KIf" customClass="ChestTableViewController" customModule="kachalochka" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Qs3-qH-7mz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chestCell" textLabel="0Bv-9o-4UX" style="IBUITableViewCellStyleDefault" id="Hs1-jX-FBj">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chestCell" id="jR7-lU-NPI">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hs1-jX-FBj" id="6hi-Jk-pXC">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jR7-lU-NPI" id="7pE-6i-HdT">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Bv-9o-4UX">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="S6y-6r-GLz" kind="show" identifier="segue" id="CVM-1r-Qcr"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
-                        <sections/>
                         <connections>
-                            <outlet property="dataSource" destination="TkS-bF-AhB" id="ESH-r0-5b0"/>
-                            <outlet property="delegate" destination="TkS-bF-AhB" id="7f3-PY-6gX"/>
+                            <outlet property="dataSource" destination="xOt-rN-KIf" id="KB5-gj-kE8"/>
+                            <outlet property="delegate" destination="xOt-rN-KIf" id="zmw-zO-HaV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="d9N-Ko-pUA"/>
+                    <navigationItem key="navigationItem" id="iWy-mr-s5M"/>
+                    <connections>
+                        <segue destination="S6y-6r-GLz" kind="show" identifier="seg2" id="WJI-Ce-Vkn"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Jb-3u-uEs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5aj-Sh-4rj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1088" y="-251"/>
+            <point key="canvasLocation" x="1212" y="-262"/>
         </scene>
         <!--Current Training Table View Controller-->
         <scene sceneID="Neq-7Y-Rho">
             <objects>
-                <tableViewController id="S6y-6r-GLz" customClass="CurrentTrainingTableViewController" customModule="kachalochka" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="AA1-AB-v38">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                <tableViewController storyboardIdentifier="currentVC" id="S6y-6r-GLz" customClass="CurrentTrainingTableViewController" customModule="kachalochka" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="currentVC" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="AA1-AB-v38">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -190,40 +183,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hry-uP-uYn" id="TYW-kc-6O3">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="XX7-rT-OF8">
-                                            <rect key="frame" x="20" y="5" width="373" height="34"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pZj-df-Uam">
-                                                    <rect key="frame" x="0.0" y="0.0" width="97" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="97" id="5lC-FG-NLY"/>
-                                                        <constraint firstAttribute="height" constant="34" id="Kkr-9d-Ns4"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v4M-53-k46">
-                                                    <rect key="frame" x="138" y="0.0" width="97" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="97" id="6xV-vn-XfI"/>
-                                                        <constraint firstAttribute="height" constant="34" id="7hq-16-gOG"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ITd-g8-GFX">
-                                                    <rect key="frame" x="276" y="0.0" width="97" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="97" id="LHo-wW-yFO"/>
-                                                        <constraint firstAttribute="height" constant="34" id="Wf8-Js-xA0"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -236,7 +195,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YnA-Co-kPY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1797" y="-251"/>
+            <point key="canvasLocation" x="2104" y="-251"/>
         </scene>
     </scenes>
     <color key="tintColor" systemColor="systemOrangeColor"/>

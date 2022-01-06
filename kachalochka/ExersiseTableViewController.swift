@@ -33,7 +33,7 @@ class ExersiseTableViewController: UITableViewController {
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let training = training.chest[indexPath.row]
+  
         var content = cell.defaultContentConfiguration()
         switch indexPath.row {
         case 0: content.text = "Chest"
@@ -47,15 +47,11 @@ class ExersiseTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       
         if indexPath.row == 0 {
-        let chestVC = ChestTableViewController()
-        
-            
-            navigationController?.pushViewController(chestVC, animated: true)
+            performSegue(withIdentifier: "seg", sender: self)
+          
             
         }
-        
-        
-        
+   
     }
     
     

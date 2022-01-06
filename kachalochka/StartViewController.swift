@@ -8,16 +8,11 @@
 import UIKit
 
 class StartViewController: UIViewController {
-
+    
     @IBOutlet weak var exerciseButton: UIButton!
     
     @IBOutlet weak var statisticButton: UIButton!
     
     @IBOutlet weak var savedTrainingButton: UIButton!
-   
-    override func viewDidLoad() {
-        
-
-}
     
 }

@@ -9,13 +9,10 @@ import Foundation
 
 struct Training {
     
-
-    
     var chest: [ChestExcersise]
     var legs: [LegsExcersise]
     var back: [BackExcersise]
-  
-   
+
 }
 
 struct Excersise {
@@ -24,25 +21,32 @@ struct Excersise {
     var weight: Int
 }
 
-enum ChestExcersise: String {
-    case dumbbellBenchPress = "жим гантелями"
-    case barbellBenchPress = "жим штанги"
-    case inclineBenchPress = "жим под наклоном"
+enum ChestExcersise {
+    case dumbbellBenchPress(Excersise)
+    case barbellBenchPress(Excersise)
+    case inclineBenchPress(Excersise)
 }
 
 enum LegsExcersise {
-    case squat(sets: Int, reps: Int)
-    case frontSquat(sets: Int, reps: Int)
-    case romanianDedlifts(sets: Int, reps: Int)
+    case squat(Excersise)
+    case frontSquat(Excersise)
+    case romanianDedlifts(Excersise)
+    
 }
 
 enum BackExcersise {
-    case deadlift(sets: Int, reps: Int)
-    case pullUps(sets: Int, reps: Int)
-    case barbelRow(sets: Int, reps: Int)
+    case deadlift(Excersise)
+    case pullUps(Excersise)
+    case barbelRow(Excersise)
     
 }
-let training = Training(chest: [ChestExcersise.barbellBenchPress, ChestExcersise.dumbbellBenchPress, ChestExcersise.inclineBenchPress],  legs: [LegsExcersise.squat(sets: 0, reps: 0), LegsExcersise.frontSquat(sets: 0, reps: 0), LegsExcersise.romanianDedlifts(sets: 0, reps: 0)] , back: [BackExcersise.barbelRow(sets: 0, reps: 0), BackExcersise.deadlift(sets: 0, reps: 0), BackExcersise.pullUps(sets: 0, reps: 0)])
+let training = Training(chest:
+    [ChestExcersise.barbellBenchPress(Excersise.init(set: 0, reps: 0, weight: 0)), ChestExcersise.dumbbellBenchPress(Excersise.init(set: 0, reps: 0, weight: 0)), ChestExcersise.inclineBenchPress(Excersise.init(set: 0, reps: 0, weight: 0))],
+                        legs:
+    [LegsExcersise.squat(Excersise.init(set: 0, reps: 0, weight: 0)), LegsExcersise.frontSquat(Excersise.init(set: 0, reps: 0, weight: 0)), LegsExcersise.romanianDedlifts(Excersise.init(set: 0, reps: 0, weight: 0))],
+                        back:
+    [BackExcersise.barbelRow(Excersise.init(set: 0, reps: 0, weight: 0)), BackExcersise.deadlift(Excersise.init(set: 0, reps: 0, weight: 0)), BackExcersise.pullUps(Excersise.init(set: 0, reps: 0, weight: 0))])
 
 
     
+
