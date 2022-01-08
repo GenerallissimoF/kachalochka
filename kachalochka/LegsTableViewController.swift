@@ -1,49 +1,45 @@
 //
-//  ChestTableViewController.swift
+//  LegsTableViewController.swift
 //  kachalochka
 //
-//  Created by Ivan Adoniev on 03.01.2022.
+//  Created by Ivan Adoniev on 07.01.2022.
 //
 
 import UIKit
 
-class ChestTableViewController: UITableViewController {
-   
+class LegsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return training.chest.count
+        return training.legs.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "chestCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "legsCell", for: indexPath)
        
         var content = cell.defaultContentConfiguration()
 
-       let exersiseType = training.chest[indexPath.row]
+       let exersiseType = training.legs[indexPath.row]
        
         switch exersiseType {
-        case .inclineBenchPress: content.text = "Incline Bench Press"
-        case .dumbbellBenchPress: content.text = "Dumbbel Bench Press"
-        case .barbellBenchPress: content.text = "Barrbell Bench Press"
+        case .squat: content.text = "Squat"
+        case .frontSquat: content.text = "Front Squat"
+        case .romanianDedlifts: content.text = "Romanian Deadlift"
         }
         cell.contentConfiguration = content
        
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "exSeg1", sender: self)
+        performSegue(withIdentifier: "exSeg2", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,20 +48,18 @@ class ChestTableViewController: UITableViewController {
         
         let indexPath = tableView.indexPathForSelectedRow!
         
-        let exersiseType = training.chest[indexPath.row]
+        let exersiseType = training.legs[indexPath.row]
        
         switch exersiseType {
-        case .inclineBenchPress(let exersise):
+        case .squat(let exersise):
             currentVC.exersise = exersise
-            currentVC.name = "Fucking incline Bench Press"
-        case .dumbbellBenchPress(let exersise):
+            currentVC.name = "Do Squt!"
+        case .frontSquat(let exersise):
             currentVC.exersise = exersise
-            currentVC.name = "Fucking dumbbell Bench Press"
-        case .barbellBenchPress(let exersise):
+            currentVC.name = "Do Squt!"
+        case .romanianDedlifts(let exersise):
             currentVC.exersise = exersise
-            currentVC.name = "Fucking barbell Bench Press"
+            currentVC.name = "Do Deadlift!"
         }
-        
     }
 }
-

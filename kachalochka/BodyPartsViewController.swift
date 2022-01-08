@@ -10,16 +10,21 @@ import UIKit
 class BodyPartsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    let cellSpacingHeight: CGFloat = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
+    func layoutSubviews() {
+        tableView.layer.cornerRadius = 5
+       }
 
     // MARK: - Table view data source
-
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -31,29 +36,24 @@ class BodyPartsViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-      
-        var content = cell.defaultContentConfiguration()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomViewCell
+        
         switch indexPath.row {
-        case 0: content.text = "Chest"
-        case 1: content.text = "Legs"
-        default: content.text = "Back"
+        case 0: cell.cellLabel.text = "Chest"
+        case 1: cell.cellLabel.text = "Legs"
+        default: cell.cellLabel.text = "Back"
         }
-    
-        cell.contentConfiguration = content
-       
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
+        
         if indexPath.row == 0 {
-            performSegue(withIdentifier: "seg", sender: self)
-          
-            
+            performSegue(withIdentifier: "chestSeg", sender: self)
+        } else if indexPath.row == 1 {
+            performSegue(withIdentifier: "legsSeg", sender: self)
+        } else {
+            performSegue(withIdentifier: "backSeg", sender: self)
         }
-   
     }
-    
-    
 }

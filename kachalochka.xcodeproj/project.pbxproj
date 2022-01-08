@@ -15,8 +15,12 @@
 		1D5B6FEC277E4A2100C33E52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B6FEA277E4A2100C33E52 /* LaunchScreen.storyboard */; };
 		1D5B6FF6277FA15E00C33E52 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5B6FF5277FA15E00C33E52 /* Model.swift */; };
 		1D5B6FF8277FAF9800C33E52 /* BodyPartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5B6FF7277FAF9800C33E52 /* BodyPartsViewController.swift */; };
+		1D622E772787A2560080B613 /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D622E762787A2560080B613 /* CustomViewCell.swift */; };
+		1D622E792788409B0080B613 /* LegsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D622E782788409B0080B613 /* LegsTableViewController.swift */; };
+		1D622E7B278847B60080B613 /* BackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D622E7A278847B60080B613 /* BackTableViewController.swift */; };
+		1D622E7D2788BCBE0080B613 /* SecondCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D622E7C2788BCBE0080B613 /* SecondCustomTableViewCell.swift */; };
 		1D8BD2FE2783829B00FAB09A /* ChestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8BD2FD2783829B00FAB09A /* ChestTableViewController.swift */; };
-		1D9874D8278498360094D87A /* CurrentTrainingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9874D7278498360094D87A /* CurrentTrainingTableViewController.swift */; };
+		1D9874D8278498360094D87A /* ExcersisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9874D7278498360094D87A /* ExcersisesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +34,12 @@
 		1D5B6FED277E4A2100C33E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D5B6FF5277FA15E00C33E52 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1D5B6FF7277FAF9800C33E52 /* BodyPartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPartsViewController.swift; sourceTree = "<group>"; };
+		1D622E762787A2560080B613 /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
+		1D622E782788409B0080B613 /* LegsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegsTableViewController.swift; sourceTree = "<group>"; };
+		1D622E7A278847B60080B613 /* BackTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTableViewController.swift; sourceTree = "<group>"; };
+		1D622E7C2788BCBE0080B613 /* SecondCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCustomTableViewCell.swift; sourceTree = "<group>"; };
 		1D8BD2FD2783829B00FAB09A /* ChestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChestTableViewController.swift; sourceTree = "<group>"; };
-		1D9874D7278498360094D87A /* CurrentTrainingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTrainingTableViewController.swift; sourceTree = "<group>"; };
+		1D9874D7278498360094D87A /* ExcersisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcersisesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +77,12 @@
 				1D5B6FE3277E4A2000C33E52 /* StartViewController.swift */,
 				1D5B6FF7277FAF9800C33E52 /* BodyPartsViewController.swift */,
 				1D8BD2FD2783829B00FAB09A /* ChestTableViewController.swift */,
-				1D9874D7278498360094D87A /* CurrentTrainingTableViewController.swift */,
+				1D622E782788409B0080B613 /* LegsTableViewController.swift */,
+				1D622E7A278847B60080B613 /* BackTableViewController.swift */,
+				1D9874D7278498360094D87A /* ExcersisesTableViewController.swift */,
+				1D622E7C2788BCBE0080B613 /* SecondCustomTableViewCell.swift */,
 				1D5B6FE5277E4A2000C33E52 /* Main.storyboard */,
+				1D622E762787A2560080B613 /* CustomViewCell.swift */,
 				1D5B6FF5277FA15E00C33E52 /* Model.swift */,
 				1D5B6FE8277E4A2100C33E52 /* Assets.xcassets */,
 				1D5B6FEA277E4A2100C33E52 /* LaunchScreen.storyboard */,
@@ -150,13 +162,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D622E7B278847B60080B613 /* BackTableViewController.swift in Sources */,
 				1D5B6FF8277FAF9800C33E52 /* BodyPartsViewController.swift in Sources */,
 				1D5B6FE4277E4A2000C33E52 /* StartViewController.swift in Sources */,
 				1D5B6FE0277E4A2000C33E52 /* AppDelegate.swift in Sources */,
 				1D8BD2FE2783829B00FAB09A /* ChestTableViewController.swift in Sources */,
 				1D5B6FE2277E4A2000C33E52 /* SceneDelegate.swift in Sources */,
+				1D622E772787A2560080B613 /* CustomViewCell.swift in Sources */,
 				1D5B6FF6277FA15E00C33E52 /* Model.swift in Sources */,
-				1D9874D8278498360094D87A /* CurrentTrainingTableViewController.swift in Sources */,
+				1D622E792788409B0080B613 /* LegsTableViewController.swift in Sources */,
+				1D9874D8278498360094D87A /* ExcersisesTableViewController.swift in Sources */,
+				1D622E7D2788BCBE0080B613 /* SecondCustomTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
