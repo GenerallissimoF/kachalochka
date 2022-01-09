@@ -32,8 +32,8 @@ class ExcersisesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let cell = tableView.dequeueReusableCell(withIdentifier: "secondCustCell", for: indexPath) as! SecondCustomTableViewCell
-        //cell.weightTF.text = String(exersise?.weight ?? 0.0)
-      
+     
+        cell.delegate = self
         cell.plusButton.tag = indexPath.row
         cell.plusButton.addTarget(self, action: #selector(plusButtonWasPress(_sender:)), for: .touchUpInside)
        
@@ -46,14 +46,16 @@ class ExcersisesTableViewController: UITableViewController {
         exersise?.set += 1
         tableView.endUpdates()
     }
-    func drischChecking() {
-       
-            let alert = UIAlertController(title: "Go out", message: "U r fuckin drisch", preferredStyle: .alert)
-            let alertButton = UIAlertAction.init(title: "OK", style: .default, handler: nil)
-            alert.addAction(alertButton)
-            present(alert, animated: true, completion: nil)
-        }
+
+}
+extension ExcersisesTableViewController: SecondCustomTableViewCellDelegate {
+
+      func drischChecking() {
     
-    
+          let alert = UIAlertController(title: "Go out!!!", message: "Too little weight!!!", preferredStyle: .alert)
+          let alertButton = UIAlertAction.init(title: "OK", style: .default, handler: nil)
+          alert.addAction(alertButton)
+          present(alert, animated: true, completion: nil)
+      }
 }
 
