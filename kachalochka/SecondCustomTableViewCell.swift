@@ -6,38 +6,47 @@
 //
 
 import UIKit
-protocol SecondCustomTableViewCellDelegate {
-    func drischChecking()
-   func didEnterWeight(weightTF: String, repsTF: String, set: String)
-    
-}
+
 class SecondCustomTableViewCell: UITableViewCell, UITextFieldDelegate {
-    let set = "1"
+  
     @IBOutlet weak var weightTF: UITextField!
     @IBOutlet weak var repsTF: UITextField!
     @IBOutlet weak var plusButton: UIButton!
     
-    var delegate: SecondCustomTableViewCellDelegate?
-  
+   
+   
+    var weightValue = ""
+    var repsValue = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        let vk = ExcersisesTableViewController()
+        vk.delegate = self
+        
         weightTF.placeholder = "Enter weight"
         repsTF.placeholder = "reps"
         weightTF.delegate = self
         repsTF.delegate = self
-        delegate?.didEnterWeight(weightTF: weightTF.text!, repsTF: repsTF.text!, set: set)
+        
+        
+        weightValue = UserDefaults.standard.string(forKey: "weight") ?? "0"
+        repsValue = UserDefaults.standard.string(forKey: "reps") ?? "0"
+        
+        
+        weightTF.text = weightValue
+        repsTF.text = repsValue
+        
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+}
+extension SecondCustomTableViewCell: ExcersisesTableViewControllerDelegate {
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if  Int(weightTF.text!) ?? 0 < 100 {
-            delegate?.drischChecking()
-        }
-       
+    func didEnterWeight(reps: String, weight: String) {
+        
+        UserDefaults.standard.set(reps, forKey: "reps")
+        UserDefaults.standard.set(weight, forKey: "weight")
+        print(reps)
         
     }
 }
