@@ -9,16 +9,23 @@ import Foundation
 
 struct Training {
     
+    
     var chest: [ChestExcersise]
     var legs: [LegsExcersise]
     var back: [BackExcersise]
     
-    static func didSetBenchPress(set: Int, reps: Int, weight: Float) {
-        
-    }
- 
-}
+    static func setChestExcersise(extecise: ChestExcersise, set: Int, reps: Int, weight: Float) {
 
+    }
+
+    static func setLegsExcersise(extecise: LegsExcersise, set: Int, reps: Int, weight: Float) {
+
+    }
+
+    static func setBackExcersise(extecise: BackExcersise, set: Int, reps: Int, weight: Float) {
+
+}
+}
 struct Excersise {
     var set: Int
     var reps: Int
@@ -53,6 +60,7 @@ let training = Training(chest:
     [BackExcersise.barbelRow(Excersise.init(set: 1, reps: 0, weight: 0)), BackExcersise.deadlift(Excersise.init(set: 1, reps: 0, weight: 0)), BackExcersise.pullUps(Excersise.init(set: 1, reps: 0, weight: 0))])
 
     
+//Training.setChestExcersise(extecise: .barbellBenchPress(Excersise.init(set: 1, reps: 1, weight: //123.4)))
 
 
 

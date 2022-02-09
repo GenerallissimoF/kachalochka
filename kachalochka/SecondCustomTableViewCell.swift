@@ -8,9 +8,11 @@
 import UIKit
 protocol SecondCustomTableViewCellDelegate {
     func drischChecking()
+   func didEnterWeight(weightTF: String, repsTF: String, set: String)
+    
 }
 class SecondCustomTableViewCell: UITableViewCell, UITextFieldDelegate {
-    
+    let set = "1"
     @IBOutlet weak var weightTF: UITextField!
     @IBOutlet weak var repsTF: UITextField!
     @IBOutlet weak var plusButton: UIButton!
@@ -24,6 +26,7 @@ class SecondCustomTableViewCell: UITableViewCell, UITextFieldDelegate {
         repsTF.placeholder = "reps"
         weightTF.delegate = self
         repsTF.delegate = self
+        delegate?.didEnterWeight(weightTF: weightTF.text!, repsTF: repsTF.text!, set: set)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,11 +34,10 @@ class SecondCustomTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //я так понял что здесь надо прописать еще одно условие if exersise == бла-бла-бла или
-        // if name, чтобы сделать ограничение по весу для каждого упражнения, но как мне обратииься к этим данным которые находятся в ExcersisesTableViewController?
-        //
         if  Int(weightTF.text!) ?? 0 < 100 {
             delegate?.drischChecking()
         }
+       
+        
     }
 }

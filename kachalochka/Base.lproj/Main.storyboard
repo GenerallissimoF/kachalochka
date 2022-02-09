@@ -181,14 +181,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customCell" id="PI1-FO-GKO" customClass="CustomViewCell" customModule="kachalochka" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PI1-FO-GKO" id="zA2-5e-kf7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSx-UV-Fm5">
-                                                    <rect key="frame" x="186.5" y="11" width="41.5" height="21.5"/>
+                                                    <rect key="frame" x="186.5" y="11" width="41.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -256,7 +256,14 @@
                             <outlet property="delegate" destination="xOt-rN-KIf" id="zmw-zO-HaV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="iWy-mr-s5M"/>
+                    <navigationItem key="navigationItem" id="iWy-mr-s5M">
+                        <barButtonItem key="rightBarButtonItem" title="To Training" id="qfS-fd-uIT">
+                            <connections>
+                                <action selector="traningList:" destination="xOt-rN-KIf" id="unV-Nv-oZB"/>
+                                <segue destination="S6y-6r-GLz" kind="show" identifier="tranSeg" id="QVh-2a-xup"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="S6y-6r-GLz" kind="show" identifier="exSeg1" id="WJI-Ce-Vkn"/>
                     </connections>
@@ -335,7 +342,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MKe-Pq-TWF"/>
+        <segue reference="QVh-2a-xup"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemOrangeColor"/>
     <resources>

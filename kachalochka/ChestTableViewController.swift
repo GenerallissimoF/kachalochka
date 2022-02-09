@@ -13,6 +13,9 @@ class ChestTableViewController: UITableViewController {
         super.viewDidLoad()
     }
 
+    @IBAction func traningList(_ sender: UIBarButtonItem) {
+        
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

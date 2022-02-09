@@ -7,14 +7,24 @@
 
 import UIKit
 
+
 class ExcersisesTableViewController: UITableViewController {
   
-    var exersise: Excersise?
+   
+   var exersise: Excersise?
     var name: String?
+    let controller = SecondCustomTableViewCell()
     
     
     override func viewDidLoad() {
     
+      
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        controller.delegate = self
+        didEnterWeight(weightTF: controller.weightTF.text!, repsTF: controller.repsTF.text!, set: controller.set)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,6 +50,11 @@ class ExcersisesTableViewController: UITableViewController {
      
         return cell
     }
+    
+    
+    
+    
+    
     @objc func plusButtonWasPress(_sender: UIButton) {
         tableView.beginUpdates()
         tableView.insertRows(at: [IndexPath.init(row: exersise?.set ?? 0 + 1 , section: 0)], with: .automatic)
@@ -57,5 +72,10 @@ extension ExcersisesTableViewController: SecondCustomTableViewCellDelegate {
           alert.addAction(alertButton)
           present(alert, animated: true, completion: nil)
       }
+    func didEnterWeight(weightTF: String, repsTF: String, set: String) {
+        UserDefaults.standard.string(forKey: weightTF)
+        UserDefaults.standard.string(forKey: repsTF)
+        UserDefaults.standard.string(forKey: set)
+    }
 }
 
