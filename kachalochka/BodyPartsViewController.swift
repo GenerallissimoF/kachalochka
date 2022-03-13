@@ -20,18 +20,16 @@ class BodyPartsViewController: UIViewController, UITableViewDataSource, UITableV
     
     func layoutSubviews() {
         tableView.layer.cornerRadius = 5
-       }
-
+    }
+    
     // MARK: - Table view data source
     
-    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-        
+        3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,9 +37,9 @@ class BodyPartsViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomViewCell
         
         switch indexPath.row {
-        case 0: cell.cellLabel.text = "Chest"
-        case 1: cell.cellLabel.text = "Legs"
-        default: cell.cellLabel.text = "Back"
+            case 0: cell.cellLabel.text = "Chest"
+            case 1: cell.cellLabel.text = "Legs"
+            default: cell.cellLabel.text = "Back"
         }
         return cell
     }
