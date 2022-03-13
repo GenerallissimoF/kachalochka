@@ -8,6 +8,6 @@
 import UIKit
 
 class CustomViewCell: UITableViewCell {
-    @IBOutlet weak var cellLabel: UILabel!
     
+    @IBOutlet weak var cellLabel: UILabel!
 }
