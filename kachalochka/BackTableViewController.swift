@@ -51,12 +51,21 @@ class BackTableViewController: UITableViewController {
             case .barbelRow(let exersise):
                 currentVC.exersise = exersise
                 currentVC.name = "Do Barbell Row!"
+                currentVC.didChangeSet = { s, r, w in
+                    training.setBarbelRow(set: s, reps: Int(r)!, weight: Float(w)!)
+                }
             case .deadlift(let exersise):
                 currentVC.exersise = exersise
                 currentVC.name = "Do Deadlift!"
+                currentVC.didChangeSet = { s, r, w in
+                    training.setDeadlift(set: s, reps: Int(r)!, weight: Float(w)!)
+                }
             case .pullUps(let exersise):
                 currentVC.exersise = exersise
                 currentVC.name = "Do Pull Ups!"
+                currentVC.didChangeSet = { s, r, w in
+                    training.setPullUps(set: s, reps: Int(r)!, weight: Float(w)!)
+                }
         }
     }
 }

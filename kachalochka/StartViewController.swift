@@ -19,5 +19,6 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         guard let image = UIImage(named: "777") else { return }
         view.backgroundColor = UIColor(patternImage: image)
+        initTraining()
     }
 }

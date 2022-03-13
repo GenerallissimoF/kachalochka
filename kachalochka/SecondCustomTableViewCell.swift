@@ -7,8 +7,8 @@
 
 import UIKit
 
-protocol SecondCustomTableViewCellDelegate {
-    func didEnterWeight(reps: String, weight: String)
+protocol SecondCustomTableViewCellDelegate: AnyObject {
+    func didEnter(set: Int, reps: String, weight: String)
 }
 
 class SecondCustomTableViewCell: UITableViewCell, UITextFieldDelegate {
@@ -20,10 +20,11 @@ class SecondCustomTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var setLabel: UILabel!
     
     
-    var delegatte: SecondCustomTableViewCellDelegate?
+    weak var delegate: SecondCustomTableViewCellDelegate?
     
     var weightValue = ""
     var repsValue = ""
+    var index: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -59,6 +60,6 @@ class SecondCustomTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         repsTF.resignFirstResponder()
-        delegatte?.didEnterWeight(reps: repsTF.text!, weight: weightTF.text!)
+        delegate?.didEnter(set: index, reps: repsTF.text!, weight: weightTF.text!)
     }
 }

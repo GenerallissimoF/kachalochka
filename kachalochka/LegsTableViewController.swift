@@ -50,13 +50,22 @@ class LegsTableViewController: UITableViewController {
         switch exersiseType {
             case .squat(let exersise):
                 currentVC.exersise = exersise
-                currentVC.name = "Do Squt!"
+                currentVC.name = "Do Squat!"
+                currentVC.didChangeSet = { s, r, w in
+                    training.setSquat(set: s, reps: Int(r)!, weight: Float(w)!)
+                }
             case .frontSquat(let exersise):
                 currentVC.exersise = exersise
-                currentVC.name = "Do Squt!"
+                currentVC.name = "DoFront Squat!"
+                currentVC.didChangeSet = { s, r, w in
+                    training.setFrontSquat(set: s, reps: Int(r)!, weight: Float(w)!)
+                }
             case .romanianDedlifts(let exersise):
                 currentVC.exersise = exersise
-                currentVC.name = "Do Deadlift!"
+                currentVC.name = "Do Romanian Deadlift!"
+                currentVC.didChangeSet = { s, r, w in
+                    training.setRomanianDedlifts(set: s, reps: Int(r)!, weight: Float(w)!)
+                }
         }
     }
 }

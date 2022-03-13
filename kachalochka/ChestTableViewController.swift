@@ -56,13 +56,27 @@ class ChestTableViewController: UITableViewController {
             case .inclineBenchPress(let exersise):
                 currentVC.exersise = exersise
                 currentVC.name = "Incline Bench Press"
+                currentVC.didChangeSet = { s, r, w in
+                    training.setInclineBenchPress(set: s, reps: Int(r)!, weight: Float(w)!)
+                }
             case .dumbbellBenchPress(let exersise):
                 currentVC.exersise = exersise
                 currentVC.name = "Dumbbell Bench Press"
+                currentVC.didChangeSet = { s, r, w in
+                    training.setDumbbellBenchPress(set: s, reps: Int(r)!, weight: Float(w)!)
+                }
+                currentVC.didAddSet = { s in
+                    training.addDumbbellBenchPress(set: s)
+                }
+                currentVC.didRemoveSet = { s in
+                    training.addDumbbellBenchPress(set: s)
+                }
             case .barbellBenchPress(let exersise):
                 currentVC.exersise = exersise
                 currentVC.name = "Barbell Bench Press"
+                currentVC.didChangeSet = { s, r, w in
+                    training.setBarbellBenchPress(set: s, reps: Int(r)!, weight: Float(w)!)
+                }
         }
     }
 }
-
