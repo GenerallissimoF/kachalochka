@@ -14,8 +14,9 @@ struct Training {
     var legs: [LegsExcersise]
     var back: [BackExcersise]
     
-    static func setChestExcersise(extecise: ChestExcersise, set: Int, reps: Int, weight: Float) {
-
+    static var currentTraining = [Training]()
+    static func setChestExcersise(extecise: ChestExcersise) {
+    
     }
 
     static func setLegsExcersise(extecise: LegsExcersise, set: Int, reps: Int, weight: Float) {
@@ -62,6 +63,6 @@ let training = Training(chest:
     
 //Training.setChestExcersise(extecise: .barbellBenchPress(Excersise.init(set: 1, reps: 1, weight: //123.4)))
 
-
+ 
 
 

@@ -6,25 +6,17 @@
 //
 
 import UIKit
-protocol ExcersisesTableViewControllerDelegate {
-   func didEnterWeight(reps: String, weight: String)
-}
 
 class ExcersisesTableViewController: UITableViewController {
-  
-   var exersise: Excersise?
-    var name: String? 
 
-    var delegate: ExcersisesTableViewControllerDelegate?
-    
+   var exersise: Excersise?
+    var name: String?
+    var setOfTheExercise = [Excersise]()
+   
+    let customVc = SecondCustomTableViewCell()
+   
     override func viewDidLoad() {
         
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        
-        let customVc = SecondCustomTableViewCell()
-        delegate?.didEnterWeight(reps: customVc.repsValue, weight: customVc.weightValue)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,21 +32,41 @@ class ExcersisesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+        customVc.delegatte = self
         let cell = tableView.dequeueReusableCell(withIdentifier: "secondCustCell", for: indexPath) as! SecondCustomTableViewCell
-     
-        cell.plusButton.tag = indexPath.row
-        cell.plusButton.addTarget(self, action: #selector(plusButtonWasPress(_sender:)), for: .touchUpInside)
+      cell.delegatte = self
         
+        cell.plusButton.tag = indexPath.row
+        cell.plusButton.addTarget(self, action: #selector(plusButtonWasPressed(_sender:)), for: .touchUpInside)
+       
+        cell.minusButton.tag = indexPath.row
+        cell.minusButton.addTarget(self, action: #selector(minusButtonWasPressed(_sender:)), for: .touchUpInside)
+        cell.setLabel.text = String(indexPath.row + 1)
         return cell
     }
-
-    @objc func plusButtonWasPress(_sender: UIButton) {
+    
+    @objc func plusButtonWasPressed(_sender: UIButton) {
         tableView.beginUpdates()
-        tableView.insertRows(at: [IndexPath.init(row: exersise?.set ?? 0 + 1 , section: 0)], with: .automatic)
+        tableView.insertRows(at: [IndexPath.init(row: exersise?.set ?? 0 , section: 0)], with: .automatic)
         exersise?.set += 1
         tableView.endUpdates()
+       
     }
-
+    @objc func minusButtonWasPressed(_sender: UIButton) {
+        tableView.beginUpdates()
+        tableView.deleteRows(at: [IndexPath.init(row: exersise!.set - 1, section: 0)], with: .automatic)
+        exersise?.set -= 1
+        tableView.endUpdates()
+        
+        
+    }
 }
+extension ExcersisesTableViewController: SecondCustomTableViewCellDelegate {
+    func didEnterWeight(reps: String, weight: String) {
+        
+        UserDefaults.standard.set(reps, forKey: "reps")
+        UserDefaults.standard.set(weight, forKey: "weight")
+    }
+}
+
 

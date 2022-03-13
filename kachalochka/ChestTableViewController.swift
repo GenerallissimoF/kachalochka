@@ -60,13 +60,13 @@ class ChestTableViewController: UITableViewController {
         switch exersiseType {
         case .inclineBenchPress(let exersise):
             currentVC.exersise = exersise
-            currentVC.name = "Fucking incline Bench Press"
+            currentVC.name = "Incline Bench Press"
         case .dumbbellBenchPress(let exersise):
             currentVC.exersise = exersise
-            currentVC.name = "Fucking dumbbell Bench Press"
+            currentVC.name = "Dumbbell Bench Press"
         case .barbellBenchPress(let exersise):
             currentVC.exersise = exersise
-            currentVC.name = "Fucking barbell Bench Press"
+            currentVC.name = "Barbell Bench Press"
         }
         
     }
